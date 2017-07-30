@@ -10,41 +10,41 @@
 ////////////////////////////////////////////////////////////////////////
 
 class ImageMaker {
-    constructor(){
-        // When this class is instantiated, the `constructor()` method is executed.
-        // TODO: Set up attributes that point to the HTML elements we wish to work with.
+    constructor(){ // When this class is instantiated, the `constructor()` method is executed.
+        
 
-        // TODO: Select the `#image-preview` div using any document selector method.
-        this.imagePreview = ;
+        this.imagePreview = document.getElementById('image-preview'); // this selects the `#image-preview` div 
 
-        // TODO: create a new `<p>` element called `this.topText`
-        this.topText = ;
-        // TODO: Add a `class` attribute to `this.topText` that contains the classname "top-text".
+        // Allow user to iput text onto top of image
+        this.topText = document.createElement('p'); // creates a new `<p>` element 
+        
+        this.topText.setAttribute('class', 'top-text'); // creates a new 'class'
+        
+        this.imagePreview.appendChild(this.topText); // adds 'topText' to image
 
-        // TODO: Append `this.topText` as a child element to `this.imagePreview`
-
-
-        // TODO: create a new `<p>` element called `this.bottomText`
-        this.bottomText = ;
-        // TODO: Add a `class` attribute to `this.bottomText` that contains the classname "bottom-text".
-
-        // TODO: Append `this.bottomText` as a child element to `this.imagePreview`
-
-        // This class also needs to use the form fields to read user input. Set
-        // those up for future use, too.
+        
+      // Allow user to iput text onto bottom of image
+        this.bottomText = document.createElement('p'); // creates a new '<p>' element
+        
+        this.bottomText.setAttribute('class', 'bottom-text'); // creates a new 'class'
+        
+        this.imagePreview.appendChild(this.bottomText); // adds 'bottomText' to image
+        
+      
+        // Enable the the class to use the form fields to read user input. 
 
         // TODO: Select the `input` element with the `name` attribute "backgroundImage"
-        this.backgroundInput = ;
+        this.backgroundInput = document.querySelector('select[name="backgroundImage"]'); 
 
         // TODO: Select the `input` element with the `name` attribute "topText"
-        this.topTextInput = ;
+        this.topTextInput = document.querySelector('input[name="topText"]');
 
         // TODO: Select the `input` element with the `name` attribute "bottomText"
-        this.bottomTextInput = ;
+        this.bottomTextInput = document.querySelector('input[name="bottomText"]');
 
-        // NOTE: If you add additional form fields to modify other aspects of
+        // ** Future Developers of the Universe: If you add additional form fields to modify other aspects of
         // the image, then you will need to make attributes for each of those
-        // elements here.
+        // elements here.**
     }
     drawPreview(){
         // This function is called whenever a user changes one of the form fields
@@ -53,12 +53,11 @@ class ImageMaker {
         // elements selected in the `constructor()` of this class in order to
         // update `this.imagePreview`.
 
-        // TODO: Update the `background-image` CSS property for `this.imagePreview`.
-
-        // TODO: Update the `innerHTML` of `this.topText`.
-
-        // TODO: Update the `innerHTML` of `this.bottomText`
-
+        this.imagePreview.style.backgroundImage = `url(images/${this.backgroundInput.value})`; // updates the background image to one user chose
+        
+        this.topText.innerHTML = this.topTextInput.value; // updates topText to what user wrote
+       
+        this.bottomText.innerHTML = this.bottomTextInput.value; // updates bottomText to what user wrote.
 
     }
     downloadImage(){
