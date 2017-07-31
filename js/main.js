@@ -33,13 +33,13 @@ class ImageMaker {
       
         // Enable the the class to use the form fields to read user input. 
 
-        // TODO: Select the `input` element with the `name` attribute "backgroundImage"
+        // Selects the `input` element with the `name` attribute "backgroundImage"
         this.backgroundInput = document.querySelector('select[name="backgroundImage"]'); 
 
-        // TODO: Select the `input` element with the `name` attribute "topText"
+        // Selects the `input` element with the `name` attribute "topText"
         this.topTextInput = document.querySelector('input[name="topText"]');
 
-        // TODO: Select the `input` element with the `name` attribute "bottomText"
+        // Select the `input` element with the `name` attribute "bottomText"
         this.bottomTextInput = document.querySelector('input[name="bottomText"]');
 
         // ** Future Developers of the Universe: If you add additional form fields to modify other aspects of
